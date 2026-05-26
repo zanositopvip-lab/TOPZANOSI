@@ -599,8 +599,68 @@ footer div:last-child{
 @media (max-width: 640px){
   #nova .list{
     grid-template-columns: 1fr !important;
-  }
+  }/* ===== NOVA HARD RESET FIX ===== */
+
+#nova{
+  display: block !important;
+  position: relative !important;
+  width: 100% !important;
+  max-width: 1180px !important;
+  margin: 0 auto !important;
+  padding: 24px 16px !important;
+  box-sizing: border-box !important;
+  float: none !important;
+  clear: both !important;
 }
+
+#nova .list{
+  display: grid !important;
+  grid-template-columns: repeat(2, minmax(0, 1fr)) !important;
+  gap: 12px !important;
+
+  width: 100% !important;
+  max-width: 1180px !important;
+  margin: 0 auto !important;
+
+  position: relative !important;
+  float: none !important;
+}
+
+#nova .item{
+  display: grid !important;
+  grid-template-columns: 72px 1fr auto !important;
+  gap: 14px !important;
+  align-items: center !important;
+
+  width: 100% !important;
+  box-sizing: border-box !important;
+}
+
+/* убираем влияние всех глобальных section/list правил */
+section#nova,
+section#nova *{
+  all: unset;
+  display: revert;
+}
+
+/* возвращаем нормальный вид только NOVA */
+#nova, #nova *{
+  all: revert;
+}
+
+/* снова задаём нормальную сетку после reset */
+#nova{
+  display: block;
+}
+
+#nova .list{
+  display: grid;
+}
+
+@media (max-width: 640px){
+  #nova .list{
+    grid-template-columns: 1fr !important;
+  }
   </style>
 </head>
 <body>
