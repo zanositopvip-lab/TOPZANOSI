@@ -566,7 +566,41 @@ footer div:last-child{
   max-width: 420px;
   width: 100%;
 }
+/* ===== FIX NOVA PARTNERS ===== */
 
+#nova{
+  width: 100% !important;
+  max-width: 1180px !important;
+  margin: 0 auto !important;
+  padding: 24px 16px !important;
+  box-sizing: border-box !important;
+}
+
+#nova .list{
+  display: grid !important;
+  grid-template-columns: repeat(2, minmax(0, 1fr)) !important;
+  gap: 12px !important;
+
+  width: 100% !important;
+  max-width: 1180px !important;
+  margin: 0 auto !important;
+}
+
+#nova .item{
+  display: grid !important;
+  grid-template-columns: 72px 1fr auto !important;
+  gap: 14px !important;
+  align-items: center !important;
+
+  width: 100% !important;
+  box-sizing: border-box !important;
+}
+
+@media (max-width: 640px){
+  #nova .list{
+    grid-template-columns: 1fr !important;
+  }
+}
   </style>
 </head>
 <body>
