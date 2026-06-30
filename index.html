@@ -636,18 +636,6 @@ footer div:last-child{
   box-sizing: border-box !important;
 }
 
-/* убираем влияние всех глобальных section/list правил */
-section#nova,
-section#nova *{
-  all: unset;
-  display: revert;
-}
-
-/* возвращаем нормальный вид только NOVA */
-#nova, #nova *{
-  all: revert;
-}
-
 /* снова задаём нормальную сетку после reset */
 #nova{
   display: block;
@@ -661,6 +649,62 @@ section#nova *{
   #nova .list{
     grid-template-columns: 1fr !important;
   }
+  /* ===== MOBILE FIX ===== */
+
+@media (max-width: 768px){
+
+  html,
+  body{
+    overflow-x:hidden;
+    width:100%;
+  }
+
+  .wrap,
+  #top,
+  #rank,
+  #nova,
+  #cataffs,
+  #combo,
+  #motor,
+  #activity{
+    width:100% !important;
+    max-width:100% !important;
+    margin:0 auto !important;
+    left:auto !important;
+    transform:none !important;
+    padding-left:16px !important;
+    padding-right:16px !important;
+    box-sizing:border-box;
+  }
+
+  .hero{
+    grid-template-columns:1fr !important;
+  }
+
+  .list{
+    display:grid !important;
+    grid-template-columns:1fr !important;
+    width:100% !important;
+  }
+
+  .item{
+    grid-template-columns:72px 1fr !important;
+    align-items:center !important;
+  }
+
+  .claim{
+    grid-column:1 / -1;
+    width:100%;
+    text-align:center;
+    margin-top:12px;
+  }
+
+  img{
+    max-width:100%;
+    height:auto;
+  }
+
+}
   </style>
 </head>
 <body>
